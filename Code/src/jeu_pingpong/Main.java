@@ -206,19 +206,19 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         /* balle rapide */
         if (e.getSource() == nivB1) {
 
-            table.vitesse_JEU = 5;
+            table.vitesse_JEU = 10;
         }
 
         /* balle normale */
         if (e.getSource() == nivB2) {
 
-            table.vitesse_JEU = 10;
+            table.vitesse_JEU = 15;
         }
 
         /* balle lente */
         if (e.getSource() == nivB3) {
 
-            table.vitesse_JEU = 18;
+            table.vitesse_JEU = 25;
         }
 
 
@@ -233,24 +233,22 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
             if (choix == JOptionPane.YES_OPTION) {
 
                 /* modification des dimensions de la table */
-                table.larg_Table = 240;
-                table.hauteur_Table = 220;
-                table.bas_Table = BAS_TABLE;
+                table.larg_Table = 600;
+                table.hauteur_Table = 400;
+                table.bas_Table = table.hauteur_Table;
 
                 /* modification du traçage des lignes de la table */
-                table.larg_Line = 220;
-                table.long_Ligne = 200;
-                table.x1 = 120;
-                table.x2 = 120;
-                table.ligne_Mediane = 210;
+                table.ligne_Mediane = table.hauteur_Table;
+                table.x1 = table.larg_Table/2;
+                table.x2 = table.larg_Table/2;
 
                 /* placement de la raquette */
-                table.place_Raquette = 220;
+                table.place_Raquette = table.larg_Table - 50;
+                table.long_Raquette = 50;
 
                 /* zone de déplacement de la balle */
                 table.balle_x_max = table.larg_Table - INCR_BALLE;
                 table.balle_y_max = table.hauteur_Table - INCR_BALLE;
-
 
                 /* redimensionnement de la fenêtre */
                 this.setBounds(0, 0, table.larg_Table + 90 , table.hauteur_Table + 80);
@@ -298,20 +296,17 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
                 table.bas_Table = BAS_TABLE;
 
                 /* modification du traçage des lignes de la table */
-                table.larg_Line = 300;
-                table.long_Ligne = 200;
-                table.x1 = 160;
-                table.x2 = 160;
-                table.ligne_Mediane = 210;
+                table.ligne_Mediane = table.hauteur_Table;
+                table.x1 = table.larg_Table/2;
+                table.x2 = table.larg_Table/2;
 
                 /* placement de la raquette */
-                table.place_Raquette = 300;
+                table.place_Raquette = table.larg_Table - 50;
+                table.long_Raquette = 120;
 
                 /* zone de déplacement de la balle */
-                table.balle_x_max = BALLE_X_MAX;
-                table.balle_y_max = BALLE_Y_MAX;
-
-
+                table.balle_x_max = table.larg_Table - INCR_BALLE;
+                table.balle_y_max = table.hauteur_Table - INCR_BALLE;
 
                 /* redimensionnement de la fenêtre */
                 this.setBounds(0, 0, table.larg_Table + 90 , table.hauteur_Table + 80);
@@ -355,19 +350,18 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
             if (choix == JOptionPane.YES_OPTION) {
 
                 /* modification des dimensions de la table */
-                table.larg_Table = 540;
-                table.hauteur_Table = 340;
-                table.bas_Table = 300;
+                table.larg_Table = 2500;
+                table.hauteur_Table = 1600;
+                table.bas_Table = 1600;
 
                 /* modification du traçage des lignes de la table */
-                table.larg_Line = 520;
-                table.long_Ligne = 320;
-                table.x1 = 270;
-                table.x2 = 270;
-                table.ligne_Mediane = 330;
+                table.ligne_Mediane = table.hauteur_Table;
+                table.x1 = table.larg_Table/2;
+                table.x2 = table.larg_Table/2;
 
                 /* placement de la raquette */
-                table.place_Raquette = 520;
+                table.place_Raquette = table.larg_Table - 50;
+                table.long_Raquette = 200;
 
                 /* zone de déplacement de la balle */
                 table.balle_x_max = table.larg_Table - INCR_BALLE;

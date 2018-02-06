@@ -20,10 +20,10 @@ public class Table_PingPong extends JPanel implements Variables_Jeu {
     public int hauteur_Table = HAUTEUR_TABLE;
     public int larg_Line = 300;
     public int long_Ligne = 200;
-    public int x1 = 160;
-    public int x2 = 160;
-    public int ligne_Mediane = 210;
-    public int place_Raquette = RAQUETTE_X;
+    public int x1 = larg_Table/2;
+    public int x2 = larg_Table/2;
+    public int ligne_Mediane = hauteur_Table;
+    public int place_Raquette = RAQUETTE_X - LONGUEUR_RAQUETTE/2;
     public int bas_Table = BAS_TABLE;
     //public Point point = new Point(0, 0);
 
@@ -32,6 +32,7 @@ public class Table_PingPong extends JPanel implements Variables_Jeu {
 
     public int vitesse_JEU = RALENTIE_JEU;
 
+    public int long_Raquette = LONGUEUR_RAQUETTE;
     public int raquetteOrdi_Y = RAQUETTE_ORDI_Y;
     private int raquetteJoueur_Y = RAQUETTE_Y;
 
@@ -90,16 +91,16 @@ public class Table_PingPong extends JPanel implements Variables_Jeu {
         super.paintComponent(Graphisme);
 
         /* la table en forme de rectangle */
-        Graphisme.setColor(Color.GREEN);
+        Graphisme.setColor(Color.BLACK);
         Graphisme.fillRect(0, 0, larg_Table, hauteur_Table);
 
         /* la 1 ère raquette en forme de rectangle */
         Graphisme.setColor(Color.RED);
-        Graphisme.fillRect(place_Raquette, raquetteJoueur_Y, LARGEUR_RAQUETTE, LONGUEUR_RAQUETTE);
+        Graphisme.fillRect(place_Raquette, raquetteJoueur_Y, LARGEUR_RAQUETTE, long_Raquette);
 
         /* la 2 ème raquette en forme de rectangle */
         Graphisme.setColor(Color.BLUE);
-        Graphisme.fillRect(RAQUETTE_ORDI_X, raquetteOrdi_Y, LARGEUR_RAQUETTE, LONGUEUR_RAQUETTE);
+        Graphisme.fillRect(RAQUETTE_ORDI_X, raquetteOrdi_Y, LARGEUR_RAQUETTE, long_Raquette);
 
         /* la balle en forme de cercle */
         Graphisme.setColor(Color.WHITE);
@@ -107,18 +108,7 @@ public class Table_PingPong extends JPanel implements Variables_Jeu {
 
         /* les lignes de la table */
         Graphisme.setColor(Color.WHITE);
-        Graphisme.drawRect(10, 10, larg_Line, long_Ligne);
         Graphisme.drawLine(x1, 10, x2, ligne_Mediane);
-
-
-        /* affiche un rectangle où un clic de souris à eu lieu */
-        /*
-        if (point != null) {
-
-            label.setText("Position (x,y) : " + point.x + ", " + point.y);
-            Graphisme.fillRect(point.x, point.y, 2, 2);
-        }
-        */
 
         /* attribue le focus à la table pour que l'écouteur des touches (n, s et q)
            envoie les commandes à la table */

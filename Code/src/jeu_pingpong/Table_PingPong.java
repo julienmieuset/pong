@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
-//import java.awt.Point;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,7 +24,6 @@ public class Table_PingPong extends JPanel implements Variables_Jeu {
     public int ligne_Mediane = hauteur_Table;
     public int place_Raquette = RAQUETTE_X - LONGUEUR_RAQUETTE/2;
     public int bas_Table = BAS_TABLE;
-    //public Point point = new Point(0, 0);
 
     public int balle_x_max = BALLE_X_MAX;
     public int balle_y_max = BALLE_Y_MAX;
@@ -45,9 +43,6 @@ public class Table_PingPong extends JPanel implements Variables_Jeu {
     public Table_PingPong () {
 
         Moteur_PingPong moteur = new Moteur_PingPong(this);
-
-        /* écouteur pour récupérer les coordonnées des clics de la souris */
-        //addMouseListener(moteur);
 
         /* écouteur pour gérer les mouvements de la raquette par le déplacement de la souris */
         addMouseMotionListener(moteur);

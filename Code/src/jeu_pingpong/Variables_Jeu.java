@@ -21,10 +21,10 @@ public interface Variables_Jeu {
     public final int LARGEUR_RAQUETTE = 8;
 
     /* rapidité de mouvement de la raquette (en pixels) */
-    public final int INCR_RAQUETTE = 4;
+    public final int INCR_RAQUETTE = 8;
 
     /* rapidité de mouvement de la balle (en pixels) */
-    public final int INCR_BALLE = 8;
+    public final int INCR_BALLE = 10;
 
     /* définition de l'espace de déplacement de la balle */
     public final int BALLE_Y_MIN = 1 + INCR_BALLE;

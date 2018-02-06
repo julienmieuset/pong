@@ -400,15 +400,7 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         }
     }
 
-
     public static void main(String[] args) {
-
         new Main();
-
     }
-
-
-
-
-
 }

@@ -1,7 +1,6 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
-//import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import javax.swing.JOptionPane;
 
@@ -46,32 +45,11 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
         jeu.start();
     }
 
-
-    /**
-     * Méthode appelée lors qu'un clic de souris à eu lieu sur l'interface de jeu
-     * @param e l'évènement
-     */
-    public void mousePressed(MouseEvent e) {
-
-        /* récupération de la position du pointeur de la souris
-           pour y placer un rectangle */
-        //table.point.x = e.getX();
-        //table.point.y = e.getY();
-
-        /* actualisation de l'interface */
-        //table.repaint();
-
-
-    }
-
     /* ensemble de méthodes implémentées par l'interface MouseListener */
     public void mouseClicked(MouseEvent e) {}
     public void mouseReleased(MouseEvent e) {}
     public void mouseEntered(MouseEvent e) {}
     public void mouseExited(MouseEvent e) {}
-
-
-
 
     /* ensemble de méthodes implémentées par l'interface MouseMotionListener */
     public void mouseDragged(MouseEvent e) {}
@@ -94,7 +72,7 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
             raquetteJoueur_Y = raquetteJoueur_Y - INCR_RAQUETTE;
         }
         /* sinon déplacement de la raquette vers le bas de la table */
-        else if (raquetteJoueur_Y < table.bas_Table) {
+        else if (raquetteJoueur_Y < table.bas_Table - table.long_Raquette*1.3) {
 
              raquetteJoueur_Y = raquetteJoueur_Y + INCR_RAQUETTE;
         }

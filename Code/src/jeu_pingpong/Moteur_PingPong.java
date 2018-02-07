@@ -210,7 +210,6 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
         }
 
         if (!table.solo) {
-          System.out.println("allo");
           if (e.getKeyCode() == 38) {
             raquetteOrdi_Y = raquetteOrdi_Y - INCR_RAQUETTE*2;
           }

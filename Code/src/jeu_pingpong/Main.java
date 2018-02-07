@@ -421,9 +421,6 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
 
         if (e.getSource() == vsJoueur) {
           table.solo = false;
-          if (!table.solo) {
-            System.out.println("oui");
-          }
         }
     }
 

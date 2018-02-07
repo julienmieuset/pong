@@ -135,21 +135,23 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
                     }
                 }
 
+                if (table.solo) {
+                  /* déplacement de la raquette de l'ordinateur pour taper la balle */
+                  if (raquetteOrdi_Y < balle_Y && raquetteOrdi_Y < table.bas_Table) {
 
-                /* déplacement de la raquette de l'ordinateur pour taper la balle */
-                if (raquetteOrdi_Y < balle_Y && raquetteOrdi_Y < table.bas_Table) {
+                      /* déplacement vers le haut */
+                      raquetteOrdi_Y = raquetteOrdi_Y + INCR_RAQUETTE;
+                  }
+                  else if (raquetteOrdi_Y > HAUT_TABLE) {
 
-                    /* déplacement vers le haut */
-                    raquetteOrdi_Y = raquetteOrdi_Y + INCR_RAQUETTE;
+                      /* déplacement vers le bas */
+                      raquetteOrdi_Y = raquetteOrdi_Y - INCR_RAQUETTE;
+                  }
+
+                  /* mise à jour de la position de la raquette de l'ordinateur */
+                  table.mouvementRaquetteOrdi(raquetteOrdi_Y);
                 }
-                else if (raquetteOrdi_Y > HAUT_TABLE) {
 
-                    /* déplacement vers le bas */
-                    raquetteOrdi_Y = raquetteOrdi_Y - INCR_RAQUETTE;
-                }
-
-                /* mise à jour de la position de la raquette de l'ordinateur */
-                table.mouvementRaquetteOrdi(raquetteOrdi_Y);
 
 
 

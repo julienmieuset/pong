@@ -37,6 +37,8 @@ public class Table_PingPong extends JPanel implements Variables_Jeu {
     private int balle_X = BALLE_X_DEPART;
     private int balle_Y = BALLE_Y_DEPART;
 
+    public boolean solo = SOLO;
+
     Dimension tailleTable = new Dimension(LARGEUR_TABLE, HAUTEUR_TABLE);
 
 

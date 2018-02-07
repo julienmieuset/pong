@@ -41,4 +41,6 @@ public interface Variables_Jeu {
     /* pour ralentir le jeu en cas d'ordinateur très rapide (millisecondes) */
     public final int RALENTIE_JEU = 10;
 
+    public final boolean SOLO = true;
+
 }

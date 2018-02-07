@@ -27,9 +27,9 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
     public JMenu options;
     public JMenuItem nouvellePartie;
     public JMenuItem quitter;
-    public JMenu niveau, vitess_Balle;
-    public ButtonGroup nivJeu, nivBalle;
-    public JRadioButton niv1, niv2, niv3, nivB1, nivB2, nivB3;
+    public JMenu niveau, vitess_Balle, choix_versus;
+    public ButtonGroup nivJeu, nivBalle, versus;
+    public JRadioButton niv1, niv2, niv3, nivB1, nivB2, nivB3, vsIa, vsJoueur;
     public JOptionPane infoQuit, infoTerrain;
 
     Moteur_PingPong moteur;
@@ -43,12 +43,16 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         barreMenu = new JMenuBar();
         fichier = new JMenu();
         options = new JMenu();
+        choix_versus = new JMenu();
         nouvellePartie = new JMenuItem();
         quitter = new JMenuItem();
         niveau = new JMenu();
         vitess_Balle = new JMenu();
         nivJeu = new ButtonGroup();
         nivBalle = new ButtonGroup();
+        versus = new ButtonGroup();
+        vsIa = new JRadioButton();
+        vsJoueur = new JRadioButton();
         niv1 = new JRadioButton();
         niv2 = new JRadioButton();
         niv3 = new JRadioButton();
@@ -72,6 +76,9 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         nivB1.setText("Rapide");
         nivB2.setText("Normale");
         nivB3.setText("Lente");
+        vsIa.setText("Joueur vs IA");
+        vsJoueur.setText("Joueur vs Joueur");
+        choix_versus.setText("Mode");
 
 
         /* raccourci clavier pour l'option "Quitter" (ctrl + n) */
@@ -90,6 +97,9 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         nivB1.addActionListener(this);
         nivB2.addActionListener(this);
         nivB3.addActionListener(this);
+        vsIa.addActionListener(this);
+        vsJoueur.addActionListener(this);
+
 
         /* ajout de l'option "Nouvelle Partie" et "Quitter" dans l'onglet "Fichier" */
         fichier.add(nouvellePartie);
@@ -104,13 +114,18 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         nivBalle.add(nivB2);
         nivBalle.add(nivB3);
 
+        versus.add(vsIa);
+        versus.add(vsJoueur);
+
         /* difficulté "Normal" et vitesse de la balle "normale" sélectionné par defaut */
         niv2.setSelected(true);
         nivB2.setSelected(true);
+        vsIa.setSelected(true);
 
         /* ajout de l'option "Niveau de jeu" dans l'onglet "Options" */
         options.add(niveau);
         options.add(vitess_Balle);
+        options.add(choix_versus);
 
         /* ajout des niveaux de difficultés au sous-menu "Niveau de jeu" */
         niveau.add(niv1);
@@ -122,6 +137,8 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         vitess_Balle.add(nivB2);
         vitess_Balle.add(nivB3);
 
+        choix_versus.add(vsIa);
+        choix_versus.add(vsJoueur);
 
         /* ajout de l'onglet "Fichier" et "Options" dans la barre de menu de l'interface */
         barreMenu.add(fichier);
@@ -397,6 +414,13 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
                 niv2.setSelected(true);
             }
 
+        }
+        if (e.getSource() == vsIa) {
+          table.solo = true;
+        }
+
+        if (e.getSource() == vsJoueur) {
+          table.solo = false;
         }
     }
 

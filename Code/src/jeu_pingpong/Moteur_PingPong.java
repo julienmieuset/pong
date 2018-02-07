@@ -44,16 +44,14 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
         Thread jeu = new Thread(this);
         jeu.start();
     }
-
     /* ensemble de méthodes implémentées par l'interface MouseListener */
-    public void mouseClicked(MouseEvent e) {}
-    public void mouseReleased(MouseEvent e) {}
-    public void mouseEntered(MouseEvent e) {}
-    public void mouseExited(MouseEvent e) {}
+        public void mouseClicked(MouseEvent e) {}
+        public void mouseReleased(MouseEvent e) {}
+        public void mouseEntered(MouseEvent e) {}
+        public void mouseExited(MouseEvent e) {}
 
-    /* ensemble de méthodes implémentées par l'interface MouseMotionListener */
-    public void mouseDragged(MouseEvent e) {}
-
+        /* ensemble de méthodes implémentées par l'interface MouseMotionListener */
+        public void mouseDragged(MouseEvent e) {}
 
     /**
      * Méthode appelée lors que le curseur de la souris se trouve sur l'interface de jeu
@@ -197,7 +195,6 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
 
         /* récupération de la touche tapée du clavier */
         char touche = e.getKeyChar();
-
         /* traitement des évènements en fonction de la touche clavier tapée */
         if ('n' == touche || 'N' == touche) {
 
@@ -212,6 +209,16 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
             serviceJeu();
         }
 
+        if (!table.solo) {
+          System.out.println("allo");
+          if (e.getKeyCode() == 38) {
+            raquetteOrdi_Y = raquetteOrdi_Y - INCR_RAQUETTE*2;
+          }
+          else if (e.getKeyCode() == 40){
+            raquetteOrdi_Y = raquetteOrdi_Y + INCR_RAQUETTE*2;
+          }
+          table.mouvementRaquetteOrdi(raquetteOrdi_Y);
+        }
     }
 
 

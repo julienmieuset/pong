@@ -223,19 +223,19 @@ public class Main extends JFrame implements Variables_Jeu, ActionListener {
         /* balle rapide */
         if (e.getSource() == nivB1) {
 
-            table.vitesse_JEU = 10;
+            table.vitesse_JEU = 6;
         }
 
         /* balle normale */
         if (e.getSource() == nivB2) {
 
-            table.vitesse_JEU = 15;
+            table.vitesse_JEU = 10;
         }
 
         /* balle lente */
         if (e.getSource() == nivB3) {
 
-            table.vitesse_JEU = 25;
+            table.vitesse_JEU = 18;
         }
 
 

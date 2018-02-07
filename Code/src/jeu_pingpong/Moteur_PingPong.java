@@ -103,13 +103,15 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
                             ? true : false);
 
                     /* mise à jour de la position de la balle sur la table */
+                    if (balle_Y == 0 || balle_Y == table.bas_Table)
+                      deplacement_Vertical = -deplacement_Vertical;
                     balle_X = balle_X - INCR_BALLE;
                     balle_Y = balle_Y - deplacement_Vertical;
                     table.positionBalle(balle_X, balle_Y);
 
                     /* si la balle rebondie */
                     if (balle_X <= RAQUETTE_ORDI_X && rebondBalle) {
-
+                        deplacement_Vertical = (raquetteJoueur_Y - balle_Y)/2;
                         deplacement_Gauche = false;
                     }
                 }
@@ -128,7 +130,7 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
 
                     /* si la balle rebondie */
                     if (balle_X >= table.place_Raquette && rebondBalle) {
-
+                        deplacement_Vertical = (raquetteOrdi_Y - balle_Y)/2;
                         deplacement_Gauche = true;
                     }
                 }
@@ -285,17 +287,17 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
         /* si l'ordinateur atteint le score de 21 points */
         if (score_Ordi == SCORE_GAGNANT) {
 
-            table.messagesJeu("Victoire de l'ordinateur " + score_Ordi + ":" + score_Joueur);
+            table.messagesJeu("Nous avons une victoire à notre gauche " + score_Ordi + ":" + score_Joueur);
         }
         /* si c'est le joueur qui atteint le score de 21 points */
         else if (score_Joueur == SCORE_GAGNANT) {
 
-            table.messagesJeu("Vous avez gagné " + score_Joueur + ":" + score_Ordi);
+            table.messagesJeu("Nous avons une victoire à notre droite " + score_Joueur + ":" + score_Ordi);
         }
         /* sinon affichage classique des scores */
         else {
 
-            table.messagesJeu("Ordinateur : " + score_Ordi + " Joueur : " + score_Joueur);
+            table.messagesJeu("gauche : " + score_Ordi + " drotie : " + score_Joueur);
 
         }
     }

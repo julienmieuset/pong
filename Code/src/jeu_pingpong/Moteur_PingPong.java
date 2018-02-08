@@ -124,6 +124,8 @@ public class Moteur_PingPong implements Variables_Jeu, MouseMotionListener
                             ? true : false);
 
                     /* mise à jour de la position de la balle sur la table */
+                    if (balle_Y == 0 || balle_Y == table.bas_Table)
+                      deplacement_Vertical = -deplacement_Vertical;
                     balle_X = balle_X + INCR_BALLE;
 
                     table.positionBalle(balle_X, balle_Y);
